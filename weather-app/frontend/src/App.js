@@ -13,6 +13,7 @@ const App = () => {
       setWeather(data);
       setError('');
     } catch (err) {
+      console.error('Error in handleSearch:', err);
       setError(err.message);
       setWeather(null);
     }
