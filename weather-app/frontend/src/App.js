@@ -9,11 +9,13 @@ const App = () => {
 
   const handleSearch = async (location) => {
     try {
+      console.log('Fetching weather data for:', location); // Debugging
       const data = await fetchWeather(location);
+      console.log('Weather data received:', data); // Debugging
       setWeather(data);
       setError('');
     } catch (err) {
-      console.error('Error in handleSearch:', err);
+      console.error('Error in handleSearch:', err); // Debugging
       setError(err.message);
       setWeather(null);
     }
